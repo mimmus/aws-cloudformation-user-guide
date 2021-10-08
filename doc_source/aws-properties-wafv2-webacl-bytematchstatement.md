@@ -60,17 +60,10 @@ The value of `SearchString` must appear at the end of the specified part of the 
 *Update requires*: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 `SearchString`  <a name="cfn-wafv2-webacl-bytematchstatement-searchstring"></a>
-A string value that you want AWS WAF to search for\. AWS WAF searches only in the part of web requests that you designate for inspection in `FieldToMatch`\. The maximum length of the value is 50 bytes\. For alphabetic characters A\-Z and a\-z, the value is case sensitive\.   
-Don't encode this string\. Provide the value that you want AWS WAF to search for\. AWS CloudFormation automatically base64 encodes the value for you\.  
+A string value that you want AWS WAF to search for\. String to search for in a web request component, base64\-encoded\. AWS WAF searches only in the part of web requests that you designate for inspection in `FieldToMatch`\. The maximum length of the value is 50 bytes\. For alphabetic characters A\-Z and a\-z, the value is case sensitive\.   
+Don't encode this string\. Provide the value that you want AWS WAF to search for\.
 For example, suppose the value of `Type` is `HEADER` and the value of `Data` is `User-Agent`\. If you want to search the `User-Agent` header for the value `BadBot`, you provide the string `BadBot` in the value of `SearchString`\.  
-You must specify either `SearchString` or `SearchStringBase64` in a `ByteMatchStatement`\.  
-*Required*: No  
-*Type*: String  
-*Update requires*: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-`SearchStringBase64`  <a name="cfn-wafv2-webacl-bytematchstatement-searchstringbase64"></a>
-String to search for in a web request component, base64\-encoded\. If you don't want to encode the string, specify the unencoded value in `SearchString` instead\.   
-You must specify either `SearchString` or `SearchStringBase64` in a `ByteMatchStatement`\.  
+You must specify either `SearchString` in a `ByteMatchStatement`\.  
 *Required*: No  
 *Type*: String  
 *Update requires*: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
